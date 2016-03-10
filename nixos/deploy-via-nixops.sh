@@ -12,7 +12,7 @@ export AZURE_AUTHORITY_URL="${AZURE_AUTHORITY_URL:-"https://login.microsoftonlin
 export AZURE_USER="${AZURE_USER:-"${AZURE_CLIENT_ID}"}"
 export AZURE_PASSWORD="${AZURE_PASSWORD:-"${AZURE_CLIENT_SECRET}"}"
 
-export AZURE_NIXOPS_DEPLOYMENT_NAME="${AZURE_NIXOPS_DEPLOYMENT_NAME:-"azuredeploy01"}"
+export AZURE_NIXOPS_DEPLOYMENT_NAME="${AZURE_NIXOPS_DEPLOYMENT_NAME:-"azuredeploy-$(date +"%Y%m%d-%H%M%S")"}"
 export NIXOPS="/home/cole/code/phreedom/nixops/result/bin/nixops"
 export DEPLOY_TARGET="/home/cole/code/phreedom/nixops/examples/trivial-azure.nix"
 
