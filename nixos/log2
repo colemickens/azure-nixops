@@ -1,0 +1,69 @@
++ export AZURE_NIXOPS_BASE_IMAGE=https://cmpersist2.blob.core.windows.net/vhds/nixos-base-igjb0w7jpjk43sxwk53l21mz118ivghn.vhd
++ AZURE_NIXOPS_BASE_IMAGE=https://cmpersist2.blob.core.windows.net/vhds/nixos-base-igjb0w7jpjk43sxwk53l21mz118ivghn.vhd
++ export AZURE_AUTHORITY_URL=https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47
++ AZURE_AUTHORITY_URL=https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47
++ export AZURE_USER=d829416c-7142-4de5-a5ad-bae9719f7b7d
++ AZURE_USER=d829416c-7142-4de5-a5ad-bae9719f7b7d
++ export AZURE_PASSWORD=
++ AZURE_PASSWORD=
++ export AZURE_NIXOPS_DEPLOYMENT_NAME=azuredeploy01
++ AZURE_NIXOPS_DEPLOYMENT_NAME=azuredeploy01
++ export NIXOPS=/home/cole/code/phreedom/nixops/result/bin/nixops
++ NIXOPS=/home/cole/code/phreedom/nixops/result/bin/nixops
++ export DEPLOY_TARGET=/home/cole/code/phreedom/nixops/examples/trivial-azure.nix
++ DEPLOY_TARGET=/home/cole/code/phreedom/nixops/examples/trivial-azure.nix
++ deploy
++ /home/cole/code/phreedom/nixops/result/bin/nixops create -d azuredeploy01 /home/cole/code/phreedom/nixops/examples/trivial-azure.nix
+created deployment ‘c28ec2b0-e6a9-11e5-865c-3085a9400935’
+c28ec2b0-e6a9-11e5-865c-3085a9400935
++ /home/cole/code/phreedom/nixops/result/bin/nixops set-args --deployment azuredeploy01 --argstr azure-image-url https://cmpersist2.blob.core.windows.net/vhds/nixos-base-igjb0w7jpjk43sxwk53l21mz118ivghn.vhd
++ /home/cole/code/phreedom/nixops/result/bin/nixops deploy --deployment azuredeploy01
+def-group....................> creating Azure resource group 'nixops-c28ec2b0-e6a9-11e5-865c-3085a9400935-def-group' in westus...
+dn-westus....................> creating Azure virtual network 'nixops-c28ec2b0-e6a9-11e5-865c-3085a9400935-dn-westus' in westus...
+def-storage-westus...........> creating Azure storage 'c28ec2b0e6a9westus' in westus...
+def-storage-westus...........> waiting for the storage to settle; this may take several minutes...
+def-storage-westus...........> updating BLOB service properties of Azure storage 'c28ec2b0e6a9westus'...
+def-storage-westus...........> updating queue service properties of Azure storage 'c28ec2b0e6a9westus'...
+def-storage-westus...........> updating table service properties of Azure storage 'c28ec2b0e6a9westus'...
+def-storage-westus-vhds......> creating Azure BLOB container 'nixops-c28ec2b0-e6a9-11e5-865c-3085a9400935-vhds' in c28ec2b0e6a9westus...
+def-storage-westus-vhds-image> creating Azure BLOB 'nixops-c28ec2b0-e6a9-11e5-865c-3085a9400935-unstable-image.vhd' in nixops-c28ec2b0-e6a9-11e5-865c-3085a9400935-vhds...
+def-storage-westus-vhds-image> updating properties of Azure BLOB 'nixops-c28ec2b0-e6a9-11e5-865c-3085a9400935-unstable-image.vhd'...
+machine......................> getting an IP address
+machine......................> creating a network interface
+machine......................> creating Azure machine 'nixops-c28ec2b0-e6a9-11e5-865c-3085a9400935-machine'...
+machine......................> got IP: 40.118.248.44
+ssh: connect to host 40.118.248.44 port 22: Connection timed out
+machine......................> could not connect to ‘root@40.118.248.44’, retrying in 1 seconds...
+ssh: connect to host 40.118.248.44 port 22: Connection refused
+machine......................> could not connect to ‘root@40.118.248.44’, retrying in 2 seconds...
+ssh: connect to host 40.118.248.44 port 22: Connection refused
+machine......................> could not connect to ‘root@40.118.248.44’, retrying in 4 seconds...
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ED25519 key sent by the remote host is
+SHA256:XUJuBIM3wHGo0IKBUUjwPPYTRvM7oaD1QERoFbL4Gnw.
+Please contact your system administrator.
+Add correct host key in /home/cole/.ssh/known_hosts to get rid of this message.
+Offending ED25519 key in /home/cole/.ssh/known_hosts:3
+ED25519 host key for 40.118.248.44 has changed and you have requested strict checking.
+Host key verification failed.
+machine......................> could not connect to ‘root@40.118.248.44’, retrying in 8 seconds...
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ED25519 key sent by the remote host is
+SHA256:XUJuBIM3wHGo0IKBUUjwPPYTRvM7oaD1QERoFbL4Gnw.
+Please contact your system administrator.
+Add correct host key in /home/cole/.ssh/known_hosts to get rid of this message.
+Offending ED25519 key in /home/cole/.ssh/known_hosts:3
+ED25519 host key for 40.118.248.44 has changed and you have requested strict checking.
+Host key verification failed.
+error: unable to start SSH master connection to ‘root@40.118.248.44’
+{'status_code': 201, '_azure_async_operation': 'https://management.azure.com/subscriptions/27b750cd-ed43-42fd-9044-8d75e124ae55/providers/Microsoft.Compute/locations/westus/operations/fde65aaf-3ec9-4fd0-bff4-fe947bb1226d?api-version=2015-05-01-preview', '_virtual_machine': <azure.mgmt.compute.computemanagement.VirtualMachine object at 0x7fcb9c3e2290>, 'request_id': 'fde65aaf-3ec9-4fd0-bff4-fe947bb1226d'}
