@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-set -x
-
 export NIXOS_CONFIG=/nixpkgs/nixos/modules/virtualisation/azure-image.nix
 
 export AZURE_LOCATION="${AZURE_LOCATION:-"westus"}"

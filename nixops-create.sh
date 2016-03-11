@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
 set -e
-set -x
 
 # colemickens's working public VHDs:
 # - https://cmpersist2.blob.core.windows.net/vhds3/nixos-base-606w5xr801ng16nr84fq9whcl1m21jwd.vhd
