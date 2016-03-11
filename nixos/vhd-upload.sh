@@ -19,6 +19,9 @@ create_vhd() {
 		--option extra-binary-caches https://hydra.nixos.org \
 		-j 4)"
 	export SRC_VHD_PATH="${SRC_VHD_DIR}/disk.vhd"
+	if [[ ! -f "${SRC_VHD_PATH}" ]]; then
+		exit -1
+	fi
 	export SRC_VHD_HASH="$(echo "${SRC_VHD_DIR}" | sed -e 's|/nix/store/\(.*\)-azure-image|\1|g')"
 	export DST_VHD_NAME="nixos-base-${SRC_VHD_HASH}.vhd"
 }
